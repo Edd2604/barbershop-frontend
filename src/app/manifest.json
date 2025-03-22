@@ -1,0 +1,10 @@
+{
+	"name": "Barbershop",
+	"short_name": "Barbershop",
+	"theme_color": "#f8bc01",
+	"background_color": "#f8bc01",
+	"display": "standalone",
+	"orientation": "portrait",
+	"scope": "/",
+	"start_url": "/"
+  }
