@@ -22,6 +22,14 @@ export default function Page() {
           <form>
             <div className="grid w-full items-center gap-10">
               <label htmlFor="name" className="flex flex-col gap-2">
+                <span>Dni</span>
+                <Input id="email" />
+              </label>
+              <label htmlFor="name" className="flex flex-col gap-2">
+                <span>Número Telefónico</span>
+                <Input id="email" />
+              </label>
+              <label htmlFor="name" className="flex flex-col gap-2">
                 <span>Correo Electrónico</span>
                 <Input id="email" />
               </label>
@@ -31,9 +39,14 @@ export default function Page() {
                 <Input id="password" type="password" />
               </label>
 
+              <label htmlFor="password" className="flex flex-col gap-2">
+                <span>Confirmar Contraseña</span>
+                <Input id="password" type="password" />
+              </label>
+
               <div className="w-full flex-center flex-col gap-2 relative">
                 <Button asChild variant={'outline'} className="text-xl w-full">
-                  <Link href={'/auth/register'}>Registrarse</Link>
+                  <Link href={'/auth/signIn'}>Iniciar Sesión</Link>
                 </Button>
                 o
                 <Button disabled={loading} className="text-xl w-full">
@@ -43,7 +56,7 @@ export default function Page() {
                       className="animate-spin ease-in-out"
                     />
                   ) : (
-                    <>Iniciar Sesión</>
+                    <>Registrarse</>
                   )}
                 </Button>
               </div>
