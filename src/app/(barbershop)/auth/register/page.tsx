@@ -3,9 +3,14 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { AiOutlineLoading } from 'react-icons/ai'
 
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from '@/modules/shared/components/ui/card'
+import { Button } from '@/modules/shared/components/ui/button'
+import { Input } from '@/modules/shared/components/ui/input'
 
 export default function Page() {
   const [loading] = useState(false)
