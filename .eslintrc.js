@@ -51,6 +51,14 @@ module.exports = {
       },
     ],
   },
+  overrides: [
+    {
+      files: ['/src/modules/shared/components/ui'],
+      rules: {
+        'prettier/prettier': 'off',
+      },
+    },
+  ],
   settings: {
     react: {
       version: 'detect',
