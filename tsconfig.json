@@ -19,7 +19,12 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@admin/*": ["./src/modules/admin/*"],
+      "@barbershop/*": ["./src/modules/barbershop/*"],
+      "@employee/*": ["./src/modules/employee/*"],
+      "@profile/*": ["./src/modules/profile/*"],
+      "@shared/*": ["./src/modules/shared/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
