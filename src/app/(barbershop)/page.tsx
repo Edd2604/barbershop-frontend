@@ -1,3 +1,31 @@
 export default function HomePage() {
-  return <div>HomePage</div>
+  return (
+    <div>
+      <div>Home page</div>
+      <div>Home page</div>
+      <div>Home page</div>
+      <div>Home page</div>
+      <div>Home page</div>
+      <div>Home page</div>
+      <div>Home page</div>
+      <div>Home page</div>
+      <div>Home page</div>
+      <div>Home page</div>
+      <div>Home page</div>
+      <div>Home page</div>
+      <div>Home page</div>
+      <div>Home page</div>
+      <div>Home page</div>
+      <div>Home page</div>
+      <div>Home page</div>
+      <div>Home page</div>
+      <div>Home page</div>
+      <div>Home page</div>
+      <div>Home page</div>
+      <div>Home page</div>
+      <div>Home page</div>
+      <div>Home page</div>
+      <div>Home page</div>
+    </div>
+  )
 }

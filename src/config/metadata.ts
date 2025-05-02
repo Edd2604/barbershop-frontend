@@ -6,6 +6,6 @@ export const META_DATA: Metadata = {
   manifest: '/manifest.json',
   appleWebApp: {
     title: 'Barbershop Web App',
-    statusBarStyle: 'default',
-  },
+    statusBarStyle: 'default'
+  }
 }

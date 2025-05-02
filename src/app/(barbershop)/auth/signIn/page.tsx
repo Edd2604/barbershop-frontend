@@ -7,7 +7,7 @@ import {
   Card,
   CardContent,
   CardHeader,
-  CardTitle,
+  CardTitle
 } from '@/modules/shared/components/ui/card'
 import { Button } from '@/modules/shared/components/ui/button'
 import { Input } from '@/modules/shared/components/ui/input'

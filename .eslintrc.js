@@ -8,16 +8,16 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
-    'plugin:import/typescript',
+    'plugin:import/typescript'
   ],
   parserOptions: {
     ecmaVersion: 2020,
-    sourceType: 'module',
+    sourceType: 'module'
   },
   env: {
     browser: true,
     node: true,
-    es6: true,
+    es6: true
   },
   rules: {
     quotes: ['error', 'single'],
@@ -35,10 +35,10 @@ module.exports = {
         groups: [
           ['builtin', 'external'],
           'internal',
-          ['parent', 'sibling', 'index'],
+          ['parent', 'sibling', 'index']
         ],
-        'newlines-between': 'always',
-      },
+        'newlines-between': 'always'
+      }
     ],
     'prettier/prettier': [
       'error',
@@ -46,27 +46,19 @@ module.exports = {
         singleQuote: true,
         semi: false,
         tabWidth: 2,
-        trailingComma: 'es5',
-        endOfLine: 'auto',
-      },
-    ],
+        trailingComma: 'none',
+        endOfLine: 'auto'
+      }
+    ]
   },
-  overrides: [
-    {
-      files: ['/src/modules/shared/components/ui'],
-      rules: {
-        'prettier/prettier': 'off',
-      },
-    },
-  ],
   settings: {
     react: {
-      version: 'detect',
+      version: 'detect'
     },
     'import/resolver': {
       node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      },
-    },
-  },
+        extensions: ['.js', '.jsx', '.ts', '.tsx']
+      }
+    }
+  }
 }

@@ -10,7 +10,7 @@ import './globals.css'
 export const metadata: Metadata = META_DATA
 
 export default function RootLayout({
-  children,
+  children
 }: Readonly<{
   children: ReactNode
 }>) {
@@ -27,7 +27,9 @@ export default function RootLayout({
             defaultTheme="dark"
             disableTransitionOnChange
           >
-            {children}
+            <div>
+              <main className="flex-1">{children}</main>
+            </div>
           </ThemeProvider>
         </NextAuthProvider>
       </body>
