@@ -1,0 +1,43 @@
+import React from 'react';
+import { cn } from '@/lib/utils';
+import { motion } from 'framer-motion';
+import { Menu } from 'lucide-react';
+
+import Logo from './Logo';
+import { Button } from '@/modules/shared/components/ui/button';
+
+interface MobileHeaderProps {
+  scrolled: boolean;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const MobileHeader: React.FC<MobileHeaderProps> = ({ scrolled, setIsOpen }) => {
+  return (
+    <header
+      className={cn(
+        'sticky top-0 z-50 w-full transition-all duration-200 md:hidden',
+        scrolled
+          ? 'bg-[var(--color-background)]/80 backdrop-blur-md shadow-sm'
+          : 'bg-[var(--color-background)]'
+      )}
+    >
+      <div className="container mx-auto px-4 py-3">
+        <div className="flex items-center justify-between">
+          <Logo />
+          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsOpen((prev) => !prev)}
+              aria-label="Toggle Menu"
+            >
+              <Menu size={16} />
+            </Button>
+          </motion.div>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+export default MobileHeader;
