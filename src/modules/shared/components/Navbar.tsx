@@ -21,6 +21,11 @@ const navLinks = [
   { href: '/location', label: 'Ubicación' }
 ]
 
+const letterVariants = {
+  hover: { y: -3, transition: { duration: 0.2 } },
+  rest: { y: 0, transition: { duration: 0.2 } }
+}
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
@@ -39,7 +44,11 @@ const Navbar = () => {
   }, [pathname])
 
   return (
-    <header
+    <motion.header
+      key={pathname}
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.2 }}
       className={cn(
         'sticky top-0 z-50 w-full transition-all duration-200',
         scrolled
@@ -51,25 +60,33 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
             <motion.div
-              whileHover={{ rotate: 360 }}
-              transition={{ duration: 0.5 }}
+              initial={{ scale: 0.9 }}
+              whileHover={{
+                scale: 1.05,
+                transition: { duration: 0.3, type: 'spring', stiffness: 300 }
+              }}
             >
-              <Scissors className="h-8 w-8 text-primary" />
+              <motion.div
+                whileHover={{ rotate: 360 }}
+                transition={{ duration: 0.6, ease: 'easeInOut' }}
+              >
+                <Scissors className="h-8 w-8 text-primary" />
+              </motion.div>
             </motion.div>
             <motion.div
+              initial="rest"
+              whileHover="hover"
               className="text-xl font-bold tracking-tight text-foreground"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: 'spring', stiffness: 400, damping: 10 }}
             >
               {Array.from(BARBER_NAME).map((letter, index) => (
                 <motion.span
                   key={index}
+                  variants={letterVariants}
+                  transition={{ delay: index * 0.03 }}
                   className="inline-block"
-                  whileHover={{ y: -3, color: 'hsl(var(--primary))' }}
-                  transition={{ type: 'spring', stiffness: 500, damping: 10 }}
                   style={{ color: 'var(--foreground)' }}
                 >
-                  {letter === ' ' ? <span>&nbsp;</span> : letter}
+                  {letter === ' ' ? <span> </span> : letter}
                 </motion.span>
               ))}
             </motion.div>
@@ -101,45 +118,60 @@ const Navbar = () => {
 
           {/* Right side buttons */}
           <div className="hidden md:flex items-center gap-2">
-            <ThemeToggle />
+            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+              <ThemeToggle />
+            </motion.div>
             <Link href="/auth/signIn">
-              <Button
-                variant="ghost"
-                size="sm"
-                className="border-2 hover: rounded-full"
+              {' '}
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <User size={16} />
-                Iniciar Sesión
-              </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="border-2 hover: rounded-full"
+                >
+                  <User size={16} />
+                  Iniciar Sesión
+                </Button>
+              </motion.div>
             </Link>
             <Link href="/auth/register">
-              <Button
-                variant="default"
-                size="sm"
-                className="rounded-full text-black"
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <UserPlus size={16} />
-                Registrarse
-              </Button>
+                <Button
+                  variant="default"
+                  size="sm"
+                  className="rounded-full text-black"
+                >
+                  <UserPlus size={16} />
+                  Registrarse
+                </Button>
+              </motion.div>
             </Link>
           </div>
 
-          {/* Mobile Navigation Toggle */}
           <div className="flex items-center gap-2 md:hidden">
-            <ThemeToggle />
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsOpen(!isOpen)}
-              aria-label="Toggle Menu"
-            >
-              <Menu className="h-6 w-6" />
-            </Button>
+            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+              <ThemeToggle />
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setIsOpen(!isOpen)}
+                aria-label="Toggle Menu"
+              >
+                <Menu className="h-6 w-6" />
+              </Button>
+            </motion.div>
           </div>
         </div>
       </div>
 
-      {/* Mobile Sidebar */}
       <AnimatePresence>
         {isOpen && (
           <>
@@ -154,7 +186,7 @@ const Navbar = () => {
               initial={{ x: '-100%' }}
               animate={{ x: 0 }}
               exit={{ x: '-100%' }}
-              transition={{ type: 'spring', damping: 20 }}
+              transition={{ type: 'tween', ease: 'easeInOut', duration: 0.3 }}
               className="fixed top-0 left-0 bottom-0 w-4/5 bg-background/95 shadow-xl p-6 md:hidden z-50"
             >
               <div className="flex items-center justify-between mb-8">
@@ -164,14 +196,19 @@ const Navbar = () => {
                     Elegance Cut Studio
                   </span>
                 </Link>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  onClick={() => setIsOpen(false)}
-                  aria-label="Close Menu"
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  <X className="h-5 w-5" />
-                </Button>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={() => setIsOpen(false)}
+                    aria-label="Close Menu"
+                  >
+                    <X className="h-5 w-5" />
+                  </Button>
+                </motion.div>
               </div>
               <nav className="flex flex-col space-y-6">
                 {navLinks.map((link) => (
@@ -195,18 +232,29 @@ const Navbar = () => {
                   </Link>
                 ))}
                 <div className="pt-4 border-t border-border">
-                  <Link href="/auth/signin">
-                    <Button
-                      variant="ghost"
-                      className="w-full justify-start mb-2"
+                  <Link href="/auth/signIn">
+                    {' '}
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.95 }}
                     >
-                      Iniciar Sesión
-                    </Button>
+                      <Button
+                        variant="ghost"
+                        className="w-full justify-start mb-2"
+                      >
+                        Iniciar Sesión
+                      </Button>
+                    </motion.div>
                   </Link>
                   <Link href="/auth/register">
-                    <Button variant="default" className="w-full">
-                      Registrarse
-                    </Button>
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <Button variant="default" className="w-full">
+                        Registrarse
+                      </Button>
+                    </motion.div>
                   </Link>
                 </div>
               </nav>
@@ -214,7 +262,7 @@ const Navbar = () => {
           </>
         )}
       </AnimatePresence>
-    </header>
+    </motion.header>
   )
 }
 
