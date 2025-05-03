@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { Facebook, Instagram, Twitter, Youtube } from 'lucide-react'
+
 import { FooterBranding } from '@/modules/barbershop/footer/components/FooterBranding'
 import { FooterContact } from '@/modules/barbershop/footer/components/FooterContact'
 import { FooterCopyright } from '@/modules/barbershop/footer/components/FooterCopyright'
@@ -16,7 +17,7 @@ const socialLinks: SocialLink[] = [
   { href: 'https://facebook.com', icon: <Facebook size={20} /> },
   { href: 'https://instagram.com', icon: <Instagram size={20} /> },
   { href: 'https://twitter.com', icon: <Twitter size={20} /> },
-  { href: 'https://youtube.com', icon: <Youtube size={20} /> },
+  { href: 'https://youtube.com', icon: <Youtube size={20} /> }
 ]
 
 export default function Footer() {

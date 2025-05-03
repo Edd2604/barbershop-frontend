@@ -1,18 +1,20 @@
-"use client";
+'use client'
 
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Eye, EyeOff } from 'lucide-react';
-import Link from 'next/link';
-import { Button } from '@/modules/shared/components/ui/button';
-import { Label } from '@/modules/shared/components/ui/label';
-import { Input } from '@/modules/shared/components/ui/input';
+import { useState } from 'react'
+import { motion } from 'framer-motion'
+import { Eye, EyeOff } from 'lucide-react'
+import Link from 'next/link'
+
+import { Button } from '@/modules/shared/components/ui/button'
+import { Label } from '@/modules/shared/components/ui/label'
+import { Input } from '@/modules/shared/components/ui/input'
 
 export default function RegisterForm() {
-  const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(false)
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false)
 
-  const inputClassName = "h-12 w-full rounded-2xl border shadow-none px-4 placeholder:text-[var(--color-muted-foreground)] focus:border-[var(--color-primary)] focus:outline-none";
+  const inputClassName =
+    'h-12 w-full rounded-2xl border shadow-none px-4 placeholder:text-[var(--color-muted-foreground)] focus:border-[var(--color-primary)] focus:outline-none'
 
   return (
     <motion.div
@@ -129,5 +131,5 @@ export default function RegisterForm() {
         </div>
       </form>
     </motion.div>
-  );
+  )
 }

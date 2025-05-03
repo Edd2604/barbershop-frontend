@@ -1,18 +1,20 @@
-"use client";
+'use client'
 
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Eye, EyeOff } from 'lucide-react';
-import Link from 'next/link';
-import { Button } from '@/modules/shared/components/ui/button';
-import { Label } from '@/modules/shared/components/ui/label';
-import { Input } from '@/modules/shared/components/ui/input';
-import { Checkbox } from '@/modules/shared/components/ui/checkbox';
+import { useState } from 'react'
+import { motion } from 'framer-motion'
+import { Eye, EyeOff } from 'lucide-react'
+import Link from 'next/link'
+
+import { Button } from '@/modules/shared/components/ui/button'
+import { Label } from '@/modules/shared/components/ui/label'
+import { Input } from '@/modules/shared/components/ui/input'
+import { Checkbox } from '@/modules/shared/components/ui/checkbox'
 
 export default function LoginForm() {
-  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(false)
 
-  const inputClassName = "h-12 w-full rounded-2xl border shadow-none px-4 placeholder:text-[var(--color-muted-foreground)] focus:border-[var(--color-primary)] focus:outline-none";
+  const inputClassName =
+    'h-12 w-full rounded-2xl border shadow-none px-4 placeholder:text-[var(--color-muted-foreground)] focus:border-[var(--color-primary)] focus:outline-none'
 
   return (
     <motion.div
@@ -65,15 +67,13 @@ export default function LoginForm() {
 
         <div className="flex items-center justify-between text-sm">
           <div className="flex items-center space-x-2">
-            <Checkbox
-              id="remember"
-              className="w-3.5 h-3.5 rounded"
-            />
-            <Label htmlFor="remember">
-              Recordarme
-            </Label>
+            <Checkbox id="remember" className="w-3.5 h-3.5 rounded" />
+            <Label htmlFor="remember">Recordarme</Label>
           </div>
-          <Link href="/auth/forgot-password" className="text-[var(--color-primary)] hover:text-[var(--color-primary)]/80 transition-colors">
+          <Link
+            href="/auth/forgot-password"
+            className="text-[var(--color-primary)] hover:text-[var(--color-primary)]/80 transition-colors"
+          >
             ¿Olvidaste tu contraseña?
           </Link>
         </div>
@@ -98,5 +98,5 @@ export default function LoginForm() {
         </div>
       </form>
     </motion.div>
-  );
+  )
 }
