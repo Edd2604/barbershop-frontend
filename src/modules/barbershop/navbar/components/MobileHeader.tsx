@@ -1,14 +1,15 @@
-import React from 'react';
-import { cn } from '@/lib/utils';
-import { motion } from 'framer-motion';
-import { Menu } from 'lucide-react';
+import React from 'react'
+import { motion } from 'framer-motion'
+import { Menu } from 'lucide-react'
 
-import Logo from './Logo';
-import { Button } from '@/modules/shared/components/ui/button';
+import { cn } from '@/lib/utils'
+import { Button } from '@/modules/shared/components/ui/button'
+
+import Logo from './Logo'
 
 interface MobileHeaderProps {
-  scrolled: boolean;
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  scrolled: boolean
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const MobileHeader: React.FC<MobileHeaderProps> = ({ scrolled, setIsOpen }) => {
@@ -37,7 +38,7 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({ scrolled, setIsOpen }) => {
         </div>
       </div>
     </header>
-  );
-};
+  )
+}
 
-export default MobileHeader;
+export default MobileHeader

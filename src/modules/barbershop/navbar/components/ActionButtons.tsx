@@ -1,26 +1,33 @@
-import React from 'react';
-import Link from 'next/link';
-import { User, UserPlus } from 'lucide-react';
-import { motion } from 'framer-motion';
+import React from 'react'
+import Link from 'next/link'
+import { User, UserPlus } from 'lucide-react'
+import { motion } from 'framer-motion'
 
-import { cn } from '@/lib/utils';
-import ThemeToggle from '@/modules/shared/components/theme-toggle';
-import { Button } from '@/modules/shared/components/ui/button';
+import { cn } from '@/lib/utils'
+import ThemeToggle from '@/modules/shared/components/theme-toggle'
+import { Button } from '@/modules/shared/components/ui/button'
 
 interface ActionButtonsProps {
-  isMobile?: boolean;
-  setIsOpen?: React.Dispatch<React.SetStateAction<boolean>>;
+  isMobile?: boolean
+  setIsOpen?: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const ActionButtons: React.FC<ActionButtonsProps> = ({ isMobile = false, setIsOpen }) => {
+const ActionButtons: React.FC<ActionButtonsProps> = ({
+  isMobile = false,
+  setIsOpen
+}) => {
   const toggleMenu = () => {
     if (isMobile && setIsOpen) {
-      setIsOpen((prev) => !prev);
+      setIsOpen((prev) => !prev)
     }
-  };
+  }
 
   return (
-    <div className={cn(isMobile ? 'flex flex-col space-y-4' : 'flex items-center gap-2')}>
+    <div
+      className={cn(
+        isMobile ? 'flex flex-col space-y-4' : 'flex items-center gap-2'
+      )}
+    >
       {isMobile ? (
         <>
           <Link href="/auth/signIn">
@@ -57,7 +64,11 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({ isMobile = false, setIsOp
           </motion.div>
           <Link href="/auth/signIn">
             <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-              <Button variant="ghost" size="sm" className="border-2 rounded-full">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="border-2 rounded-full"
+              >
                 <User size={16} className="mr-1" />
                 Iniciar Sesión
               </Button>
@@ -78,7 +89,7 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({ isMobile = false, setIsOp
         </>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default ActionButtons;
+export default ActionButtons

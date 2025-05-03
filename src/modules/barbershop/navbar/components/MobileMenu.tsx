@@ -1,24 +1,24 @@
-import React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { cn } from '@/lib/utils';
-import { navLinks } from '../constants';
+import React from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { X } from 'lucide-react'
 
-import Logo from './Logo';
-import ActionButtons from './ActionButtons';
-import { Button } from '@/modules/shared/components/ui/button';
-import { X } from 'lucide-react';
-import ThemeToggle from '@/modules/shared/components/theme-toggle';
+import { cn } from '@/lib/utils'
+import { Button } from '@/modules/shared/components/ui/button'
+import ThemeToggle from '@/modules/shared/components/theme-toggle'
 
+import { navLinks } from '../constants'
+import Logo from './Logo'
+import ActionButtons from './ActionButtons'
 
 interface MobileMenuProps {
-  isOpen: boolean;
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  isOpen: boolean
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, setIsOpen }) => {
-  const pathname = usePathname();
+  const pathname = usePathname()
 
   return (
     <AnimatePresence>
@@ -41,7 +41,10 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, setIsOpen }) => {
             <div className="flex items-center justify-between mb-8">
               <Logo iconSize="h-6 w-6" textSize="text-lg" />
               <ThemeToggle />
-              <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 <Button
                   variant="ghost"
                   size="icon"
@@ -82,7 +85,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, setIsOpen }) => {
         </>
       )}
     </AnimatePresence>
-  );
-};
+  )
+}
 
-export default MobileMenu;
+export default MobileMenu

@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Link from 'next/link'
+
 import { navLinks } from '../../navbar/constants'
 
 interface FooterLinkProps {
@@ -30,8 +31,8 @@ export const FooterNavigation = () => {
     { href: '/barbershop', label: 'Inicio' },
     ...navLinks.map((link) => ({
       href: `/barbershop${link.href}`,
-      label: link.label,
-    })),
+      label: link.label
+    }))
   ]
 
   return (

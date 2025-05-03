@@ -1,21 +1,24 @@
-import React from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { motion, MotionProps } from 'framer-motion';
-import { cn } from '@/lib/utils';
-import { navLinks } from '../constants';
+import React from 'react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { motion, MotionProps } from 'framer-motion'
 
-import Logo from './Logo';
-import ActionButtons from './ActionButtons';
+import { cn } from '@/lib/utils'
 
+import { navLinks } from '../constants'
+import Logo from './Logo'
+import ActionButtons from './ActionButtons'
 
 interface DesktopHeaderProps {
-  scrolled: boolean;
-  headerAnimationProps: MotionProps;
+  scrolled: boolean
+  headerAnimationProps: MotionProps
 }
 
-const DesktopHeader: React.FC<DesktopHeaderProps> = ({ scrolled, headerAnimationProps }) => {
-  const pathname = usePathname();
+const DesktopHeader: React.FC<DesktopHeaderProps> = ({
+  scrolled,
+  headerAnimationProps
+}) => {
+  const pathname = usePathname()
 
   return (
     <motion.header
@@ -56,7 +59,7 @@ const DesktopHeader: React.FC<DesktopHeaderProps> = ({ scrolled, headerAnimation
         </div>
       </div>
     </motion.header>
-  );
-};
+  )
+}
 
-export default DesktopHeader;
+export default DesktopHeader

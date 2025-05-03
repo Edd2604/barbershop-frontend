@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+
 import { BARBER_NAME } from '@/modules/shared/constants'
 
 interface SocialLink {
@@ -35,7 +36,9 @@ export const FooterBranding = ({ socialLinks }: FooterBrandingProps) => {
         <span className="text-[var(--color-primary)]">{part2BarberName}</span>
       </h3>
       <p className="text-[var(--color-foreground)]/70 text-sm md:text-base leading-relaxed">
-        En {BARBER_NAME} ofrecemos servicios de barbería exclusivos para el caballero moderno, con productos premium y atención personalizada en un ambiente distinguido y sofisticado.
+        En {BARBER_NAME} ofrecemos servicios de barbería exclusivos para el
+        caballero moderno, con productos premium y atención personalizada en un
+        ambiente distinguido y sofisticado.
       </p>
       <div className="flex justify-center md:justify-start space-x-4 pt-6">
         {socialLinks.map((link, index) => (

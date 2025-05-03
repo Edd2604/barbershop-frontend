@@ -11,26 +11,38 @@ interface ContactItem {
 export const FooterContact = () => {
   const contactItems: ContactItem[] = [
     {
-      icon: <MapPin className="h-6 w-6 mr-3 text-gray-700 dark:text-[var(--color-primary)] shrink-0" />,
-      text: 'Av. El Sol 235, San Juan de Lurigancho 15096',
+      icon: (
+        <MapPin className="h-6 w-6 mr-3 text-gray-700 dark:text-[var(--color-primary)] shrink-0" />
+      ),
+      text: 'Av. El Sol 235, San Juan de Lurigancho 15096'
     },
     {
-      icon: <Phone className="h-6 w-6 mr-3 text-gray-700 dark:text-[var(--color-primary)] shrink-0" />,
-      text: '(01) 315 9600',
+      icon: (
+        <Phone className="h-6 w-6 mr-3 text-gray-700 dark:text-[var(--color-primary)] shrink-0" />
+      ),
+      text: '(01) 315 9600'
     },
     {
-      icon: <Mail className="h-6 w-6 mr-3 text-gray-700 dark:text-[var(--color-primary)] shrink-0" />,
-      text: 'info@rinconbarbero.com',
+      icon: (
+        <Mail className="h-6 w-6 mr-3 text-gray-700 dark:text-[var(--color-primary)] shrink-0" />
+      ),
+      text: 'info@rinconbarbero.com'
     },
     {
-      icon: <Clock className="h-6 w-6 mr-3 text-gray-700 dark:text-[var(--color-primary)] shrink-0" />,
+      icon: (
+        <Clock className="h-6 w-6 mr-3 text-gray-700 dark:text-[var(--color-primary)] shrink-0" />
+      ),
       text: (
         <div>
-          <p className="text-[var(--color-foreground)]/70">Lun - Vie: 9:00 - 20:00</p>
-          <p className="text-[var(--color-foreground)]/70">Sáb: 10:00 - 18:00</p>
+          <p className="text-[var(--color-foreground)]/70">
+            Lun - Vie: 9:00 - 20:00
+          </p>
+          <p className="text-[var(--color-foreground)]/70">
+            Sáb: 10:00 - 18:00
+          </p>
         </div>
-      ),
-    },
+      )
+    }
   ]
 
   return (
@@ -42,7 +54,9 @@ export const FooterContact = () => {
         {contactItems.map((item, index) => (
           <li key={index} className="flex items-start">
             {item.icon}
-            <span className="text-[var(--color-foreground)]/70">{item.text}</span>
+            <span className="text-[var(--color-foreground)]/70">
+              {item.text}
+            </span>
           </li>
         ))}
       </ul>
