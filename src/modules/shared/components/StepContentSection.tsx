@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { fadeIn } from '@/lib/motion';
 import { Button } from './ui/button';
+import { Badge } from './ui/badge';
 
 interface StepContentSectionProps {
   title: string;
@@ -59,12 +60,9 @@ const StepContentSection = ({
             variants={fadeIn}
             className={imageFirst ? '' : 'lg:col-start-1'}
           >
-            <div className="flex items-center gap-2 mb-2">
-              <div className="h-1 w-10 bg-primary"></div>
-              <span className="text-primary uppercase text-sm font-medium tracking-wider">
-                {subtitle}
-              </span>
-            </div>
+            <motion.div variants={fadeIn}>
+              <Badge className="mb-4">{subtitle}</Badge>
+            </motion.div>
             <h2 className="text-3xl md:text-5xl font-bold mb-6">{title}</h2>
             <p className="text-muted-foreground mb-6 text-lg">{description}</p>
             {listItems.length > 0 && (
