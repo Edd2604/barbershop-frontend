@@ -5,44 +5,8 @@ import StatsSection from '@/modules/barbershop/about/components/StatsSection'
 import TimelineSection from '@/modules/barbershop/about/components/TimelineSection'
 import CallToReserveSection from '@/modules/shared/components/CallToReserveSection'
 import HeroSection from '@/modules/shared/components/HeroSection'
+import { timeline } from '@/data'
 
-const timeline = [
-  {
-    year: 2018,
-    title: 'Fundación',
-    description:
-      'BLADE abre sus puertas con un concepto innovador de barbería que combina técnicas tradicionales con tendencias modernas.',
-    image: '/fondo1.jpeg'
-  },
-  {
-    year: 2020,
-    title: 'Expansión',
-    description:
-      'Tras el éxito inicial, ampliamos nuestras instalaciones y contratamos a nuevos barberos para satisfacer la creciente demanda.',
-    image: '/fondo2.jpeg'
-  },
-  {
-    year: 2022,
-    title: 'Reconocimiento',
-    description:
-      "Ganamos el premio a 'Mejor Barbería de la Ciudad' y comenzamos a ofrecer cursos de formación para nuevos barberos.",
-    image: '/fondo1.jpeg'
-  },
-  {
-    year: 2023,
-    title: 'Innovación',
-    description:
-      'Implementamos nuevas tecnologías y productos exclusivos para ofrecer una experiencia aún más premium a nuestros clientes.',
-    image: '/fondo2.jpeg'
-  },
-  {
-    year: 2025,
-    title: 'Actualidad',
-    description:
-      'Hoy BLADE es un referente en el sector con un equipo de profesionales de primer nivel y clientes satisfechos que nos recomiendan.',
-    image: '/fondo1.jpeg'
-  }
-]
 
 export default function AboutPage() {
   return (

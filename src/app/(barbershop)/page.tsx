@@ -1,33 +1,21 @@
 'use client'
 
+import BarbersSection from '@/modules/barbershop/home/components/barbers/BarbersSection'
+import GallerySection from '@/modules/barbershop/home/components/gallery/GallerySection'
+import HeroSection from '@/modules/barbershop/home/components/hero/HeroSection'
+import ServicesSection from '@/modules/barbershop/home/components/services/ServicesSection'
+import TestimonialsSection from '@/modules/barbershop/home/components/testimonials/TestimonialsSection'
+import BackToTopButton from '@/modules/shared/components/BackToTopButton'
+
 export default function HomePage() {
   return (
     <div>
-      <div>Home page</div>
-      <div>Home page</div>
-      <div>Home page</div>
-      <div>Home page</div>
-      <div>Home page</div>
-      <div>Home page</div>
-      <div>Home page</div>
-      <div>Home page</div>
-      <div>Home page</div>
-      <div>Home page</div>
-      <div>Home page</div>
-      <div>Home page</div>
-      <div>Home page</div>
-      <div>Home page</div>
-      <div>Home page</div>
-      <div>Home page</div>
-      <div>Home page</div>
-      <div>Home page</div>
-      <div>Home page</div>
-      <div>Home page</div>
-      <div>Home page</div>
-      <div>Home page</div>
-      <div>Home page</div>
-      <div>Home page</div>
-      <div>Home page</div>
+      <HeroSection />
+      <ServicesSection />
+      <GallerySection />
+      <BarbersSection />
+      <TestimonialsSection />
+      <BackToTopButton />
     </div>
   )
 }
