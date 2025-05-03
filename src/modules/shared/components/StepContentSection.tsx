@@ -1,21 +1,23 @@
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import Link from 'next/link';
-import { fadeIn } from '@/lib/motion';
-import { Button } from './ui/button';
-import { Badge } from './ui/badge';
+import { motion } from 'framer-motion'
+import Image from 'next/image'
+import Link from 'next/link'
+
+import { fadeIn } from '@/lib/motion'
+
+import { Button } from './ui/button'
+import { Badge } from './ui/badge'
 
 interface StepContentSectionProps {
-  title: string;
-  subtitle: string;
-  description: string;
-  listItems?: string[];
-  listTitle?: string;
-  buttonText: string;
-  buttonLink: string;
-  imagePosition?: 'left' | 'right';
-  imageAlt: string;
-  imageSrc: string;
+  title: string
+  subtitle: string
+  description: string
+  listItems?: string[]
+  listTitle?: string
+  buttonText: string
+  buttonLink: string
+  imagePosition?: 'left' | 'right'
+  imageAlt: string
+  imageSrc: string
 }
 
 const StepContentSection = ({
@@ -28,9 +30,9 @@ const StepContentSection = ({
   buttonLink,
   imagePosition = 'left',
   imageAlt,
-  imageSrc,
+  imageSrc
 }: StepContentSectionProps) => {
-  const imageFirst = imagePosition === 'left';
+  const imageFirst = imagePosition === 'left'
 
   return (
     <section className="py-10 lg:py-20">
@@ -40,8 +42,7 @@ const StepContentSection = ({
         >
           <motion.div
             initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
+            animate="visible"
             variants={fadeIn}
             className={`relative h-[500px] rounded-xl overflow-hidden hidden lg:block ${imageFirst ? '' : 'lg:col-start-2'}`}
           >
@@ -95,7 +96,7 @@ const StepContentSection = ({
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default StepContentSection;
+export default StepContentSection

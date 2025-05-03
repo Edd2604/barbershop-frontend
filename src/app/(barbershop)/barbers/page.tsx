@@ -1,23 +1,14 @@
 'use client'
 import TeamSection from '@/modules/barbershop/barbers/components/TeamSection'
-import HeroSection from '@/modules/shared/components/HeroSection'
 import { barbers } from '@/data'
 import StepContentSection from '@/modules/shared/components/StepContentSection'
 import CallToReserveSection from '@/modules/shared/components/CallToReserveSection'
-import HeroSection2 from '@/modules/shared/components/HeroSection2'
+import HeroSection from '@/modules/shared/components/HeroSection'
 
 export default function BarbersPage() {
   return (
     <div>
-      {/* <HeroSection
-        imageSrc={'/fondo1.jpeg'}
-        title={'Nuestros '}
-        highlightedWord={'Barberos'}
-        description={
-          'Conoce al equipo de profesionales que harán realidad tu mejor versión.'
-        }
-      /> */}
-      <HeroSection2
+      <HeroSection
         badgeText="NUESTRO EQUIPO"
         title="Maestros Barberos"
         description="Conoce a nuestro equipo de profesionales apasionados por su oficio y comprometidos con la excelencia."

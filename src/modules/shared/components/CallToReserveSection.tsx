@@ -1,28 +1,28 @@
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { fadeIn, staggerContainer } from '@/lib/motion';
-import { Button } from './ui/button';
+import { motion } from 'framer-motion'
+import Link from 'next/link'
 
-// Definición de tipos para las props
+import { fadeIn, staggerContainer } from '@/lib/motion'
+import { Calendar } from 'lucide-react'
+
+import { Button } from './ui/button'
+
 interface CallToReserveSectionProps {
-  title: string;
-  description: string;
-  buttonText: string;
+  title: string
+  description: string
+  buttonText: string
 }
 
-// Componente con función de tipo flecha y desestructuración de props
 const CallToReserveSection = ({
   title,
   description,
-  buttonText,
+  buttonText
 }: CallToReserveSectionProps) => {
   return (
     <section className="py-20 bg-primary text-foreground">
       <div className="container mx-auto px-4 text-center">
         <motion.div
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+          animate="visible"
           variants={staggerContainer}
           className="max-w-3xl mx-auto"
         >
@@ -32,10 +32,7 @@ const CallToReserveSection = ({
           >
             {title}
           </motion.h2>
-          <motion.p
-            className="text-black text-lg mb-8"
-            variants={fadeIn}
-          >
+          <motion.p className="text-black text-lg mb-8" variants={fadeIn}>
             {description}
           </motion.p>
           <motion.div variants={fadeIn}>
@@ -49,6 +46,7 @@ const CallToReserveSection = ({
                   size="lg"
                   className="rounded-full bg-white hover:bg-white text-black"
                 >
+                  <Calendar />
                   {buttonText}
                 </Button>
               </motion.div>
@@ -57,7 +55,7 @@ const CallToReserveSection = ({
         </motion.div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default CallToReserveSection;
+export default CallToReserveSection

@@ -5,14 +5,12 @@ module.exports = {
     'next/core-web-vitals',
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
-    'plugin:import/errors',
-    'plugin:import/warnings',
-    'plugin:import/typescript'
+    'plugin:prettier/recommended'
   ],
   parserOptions: {
     ecmaVersion: 2020,
-    sourceType: 'module'
+    sourceType: 'module',
+    project: false // Evita análisis de tipos pesado
   },
   env: {
     browser: true,
@@ -20,26 +18,13 @@ module.exports = {
     es6: true
   },
   rules: {
-    quotes: ['error', 'single'],
-    semi: ['error', 'never'],
-    'no-unused-vars': ['error'],
+    'no-unused-vars': 'off', // Dejar a TypeScript
     '@typescript-eslint/no-unused-vars': ['error'],
     'no-undef': 'error',
     'no-empty': 'error',
     'no-constant-condition': 'error',
     'no-debugger': 'error',
     'no-console': ['warn', { allow: ['warn', 'error'] }],
-    'import/order': [
-      'error',
-      {
-        groups: [
-          ['builtin', 'external'],
-          'internal',
-          ['parent', 'sibling', 'index']
-        ],
-        'newlines-between': 'always'
-      }
-    ],
     'prettier/prettier': [
       'error',
       {
@@ -56,8 +41,8 @@ module.exports = {
       version: 'detect'
     },
     'import/resolver': {
-      node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx']
+      typescript: {
+        alwaysTryTypes: true
       }
     }
   }

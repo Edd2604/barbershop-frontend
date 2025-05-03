@@ -1,52 +1,36 @@
-import Image from 'next/image'
 import { motion } from 'framer-motion'
 
-import { staggerContainer, fadeIn } from '@/lib/motion'
+import { fadeIn, staggerContainer } from '@/lib/motion'
+
+import { Badge } from './ui/badge'
 
 interface HeroSectionProps {
-  imageSrc: string
+  badgeText: string
   title: string
-  highlightedWord: string
   description: string
 }
 
-export default function HeroSection({
-  imageSrc,
-  title,
-  highlightedWord,
-  description
-}: HeroSectionProps) {
+const HeroSection = ({ badgeText, title, description }: HeroSectionProps) => {
   return (
-    <section className="relative">
-      <div className="absolute inset-0 bg-gradient-to-r from-black/90 to-transparent z-10" />
-      <div className="relative h-[50vh] overflow-hidden">
-        <Image
-          src={imageSrc}
-          alt="Hero background"
-          fill
-          className="object-cover"
-          priority
-        />
-      </div>
-      <div className="container mx-auto px-4 absolute inset-0 z-20 flex items-center">
+    <section className="relative py-20">
+      <div className="container mx-auto px-4">
         <motion.div
-          className="max-w-2xl"
           initial="hidden"
           animate="visible"
           variants={staggerContainer}
+          className="max-w-3xl mx-auto text-center"
         >
+          <motion.div variants={fadeIn}>
+            <Badge className="mb-4">{badgeText}</Badge>
+          </motion.div>
           <motion.h1
-            className="text-4xl md:text-6xl font-bold tracking-tight mb-4 text-white dark:text-white"
+            className="text-4xl md:text-6xl font-bold mb-6"
             variants={fadeIn}
           >
-            {title.replace(highlightedWord, '')}
-            <motion.span className="text-primary">
-              {' '}
-              {highlightedWord}
-            </motion.span>
+            {title}
           </motion.h1>
           <motion.p
-            className="text-lg md:text-xl text-gray-400"
+            className="text-xl text-muted-foreground mb-8"
             variants={fadeIn}
           >
             {description}
@@ -56,3 +40,5 @@ export default function HeroSection({
     </section>
   )
 }
+
+export default HeroSection
