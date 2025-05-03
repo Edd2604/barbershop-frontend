@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
@@ -26,9 +28,9 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, setIsOpen }) => {
         <>
           <motion.div
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            animate={{ opacity: 0.8 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-[var(--color-background)] pointer-events-none md:hidden z-40"
+            className="fixed inset-0 backdrop-blur-md xl:hidden z-40"
             onClick={() => setIsOpen(false)}
           />
           <motion.div
@@ -36,10 +38,13 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, setIsOpen }) => {
             animate={{ x: 0 }}
             exit={{ x: '-100%' }}
             transition={{ type: 'tween', ease: 'easeInOut', duration: 0.3 }}
-            className="fixed top-0 left-0 bottom-0 w-4/5 bg-[var(--color-sidebar)] shadow-xl p-6 md:hidden z-50"
+            className="fixed top-0 left-0 bottom-0 w-4/5 md:w-2/5 bg-[var(--color-sidebar)] shadow-xl p-6 xl:hidden z-50"
           >
             <div className="flex items-center justify-between mb-8">
-              <Logo iconSize="h-6 w-6" textSize="text-lg" />
+              <Logo
+                iconSize="h-5 w-5 md:h-6 md:w-6"
+                textSize="text-base md:text-lg"
+              />
               <ThemeToggle />
               <motion.div
                 whileHover={{ scale: 1.1 }}

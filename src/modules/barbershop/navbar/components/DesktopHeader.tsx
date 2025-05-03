@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -24,7 +26,7 @@ const DesktopHeader: React.FC<DesktopHeaderProps> = ({
     <motion.header
       {...headerAnimationProps}
       className={cn(
-        'sticky top-0 z-50 w-full transition-all duration-200 hidden md:block',
+        'sticky top-0 z-50 w-full transition-all duration-200 hidden xl:block',
         scrolled
           ? 'bg-[var(--color-background)]/80 backdrop-blur-md shadow-sm'
           : 'bg-[var(--color-background)]'
