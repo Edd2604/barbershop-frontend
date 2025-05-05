@@ -9,7 +9,7 @@ import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
-  TooltipTrigger,
+  TooltipTrigger
 } from '@/modules/shared/components/ui/tooltip'
 
 export function NavAdmin() {

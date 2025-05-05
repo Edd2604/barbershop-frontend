@@ -7,7 +7,6 @@ import CallToReserveSection from '@/modules/shared/components/CallToReserveSecti
 import HeroSection from '@/modules/shared/components/HeroSection'
 import { timeline } from '@/data'
 
-
 export default function AboutPage() {
   return (
     <div>

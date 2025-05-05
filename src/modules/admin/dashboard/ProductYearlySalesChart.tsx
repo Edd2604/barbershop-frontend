@@ -6,7 +6,7 @@ import {
   ChartConfig,
   ChartContainer,
   ChartTooltip,
-  ChartTooltipContent,
+  ChartTooltipContent
 } from '@/modules/shared/components/ui/chart'
 
 const chartData = [
@@ -21,13 +21,13 @@ const chartData = [
   { mes: 'Setiembre', ventas: Math.floor(Math.random() * 100) },
   { mes: 'Octubre', ventas: Math.floor(Math.random() * 100) },
   { mes: 'Noviembre', ventas: Math.floor(Math.random() * 100) },
-  { mes: 'Diciembre', ventas: Math.floor(Math.random() * 100) },
+  { mes: 'Diciembre', ventas: Math.floor(Math.random() * 100) }
 ]
 
 const chartConfig = {
   label: {
-    color: 'rgb(0,0,0)',
-  },
+    color: 'rgb(0,0,0)'
+  }
 } satisfies ChartConfig
 
 export default function ProductYearlySalesChart() {
@@ -42,7 +42,7 @@ export default function ProductYearlySalesChart() {
           data={chartData}
           margin={{
             left: 12,
-            right: 12,
+            right: 12
           }}
         >
           <CartesianGrid vertical={false} />

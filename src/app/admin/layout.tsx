@@ -4,7 +4,7 @@ import { InstallButton } from '@/modules/shared/components/install-button'
 import { NavAdmin } from '@/modules/admin/admin-navbar'
 
 export default function AdminLayout({
-  children,
+  children
 }: {
   children: React.ReactNode
 }) {

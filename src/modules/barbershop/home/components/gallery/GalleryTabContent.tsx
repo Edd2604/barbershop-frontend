@@ -6,21 +6,22 @@ import { fadeIn } from '@/lib/motion'
 import MotionWrapper from './MotionWrapper'
 
 interface GalleryImage {
-  src: string;
-  alt: string;
-  title: string;
-  category: string;
+  src: string
+  alt: string
+  title: string
+  category: string
 }
 
 interface GalleryTabContentProps {
-  category: string;
-  images: GalleryImage[];
+  category: string
+  images: GalleryImage[]
 }
 
 const GalleryTabContent = ({ category, images }: GalleryTabContentProps) => {
-  const filteredImages = category === 'all'
-    ? images
-    : images.filter((image) => image.category === category)
+  const filteredImages =
+    category === 'all'
+      ? images
+      : images.filter((image) => image.category === category)
 
   return (
     <TabsContent value={category} className="mt-8">

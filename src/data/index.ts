@@ -1,4 +1,4 @@
-import { Value } from "@/modules/barbershop/about/components/OurValuesSection"
+import { Value } from '@/modules/barbershop/about/components/OurValuesSection'
 
 export const barbers = [
   {

@@ -10,7 +10,7 @@ export const authOptions: NextAuthOptions = {
       name: 'Credentials',
       credentials: {
         email: { label: 'Email', type: 'email', placeholder: 'jsmith' },
-        password: { label: 'Password', type: 'password', placeholder: '*****' },
+        password: { label: 'Password', type: 'password', placeholder: '*****' }
       },
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) return null
@@ -20,7 +20,7 @@ export const authOptions: NextAuthOptions = {
           const res = await fetch(BACKEND_URL + '/auth/signIn', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email, password }),
+            body: JSON.stringify({ email, password })
           })
           if (!res.ok) {
             console.error('Error en autenticación:', await res.text())
@@ -33,8 +33,8 @@ export const authOptions: NextAuthOptions = {
           console.error('Error en la solicitud:', error)
           return null
         }
-      },
-    }),
+      }
+    })
   ],
   // pages: {
   //   signIn: '/auth/login',
@@ -48,6 +48,6 @@ export const authOptions: NextAuthOptions = {
       session.user = token.user
       session.backendTokens = token.backendTokens
       return session
-    },
-  },
+    }
+  }
 }

@@ -6,7 +6,7 @@ import {
   ChartConfig,
   ChartContainer,
   ChartTooltip,
-  ChartTooltipContent,
+  ChartTooltipContent
 } from '@/modules/shared/components/ui/chart'
 
 const chartData = [
@@ -15,13 +15,13 @@ const chartData = [
   { mes: 'Marzo', registrados: Math.floor(Math.random() * 100) },
   { mes: 'Abril', registrados: Math.floor(Math.random() * 100) },
   { mes: 'Mayo', registrados: Math.floor(Math.random() * 100) },
-  { mes: 'Junio', registrados: Math.floor(Math.random() * 100) },
+  { mes: 'Junio', registrados: Math.floor(Math.random() * 100) }
 ]
 
 const chartConfig = {
   label: {
-    color: 'var(--chart-1)',
-  },
+    color: 'var(--chart-1)'
+  }
 } satisfies ChartConfig
 
 export default function CustomerGrowthChart() {
@@ -36,7 +36,7 @@ export default function CustomerGrowthChart() {
           data={chartData}
           margin={{
             left: 12,
-            right: 12,
+            right: 12
           }}
         >
           <CartesianGrid vertical={false} />

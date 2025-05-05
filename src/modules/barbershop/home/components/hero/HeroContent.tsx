@@ -23,7 +23,10 @@ const HeroContent = () => (
         servicio de barbería de élite diseñado para el hombre moderno.
       </p>
       <div className="flex flex-wrap gap-4">
-        <Button size="lg" className="rounded-full bg-yellow-500 text-black hover:bg-yellow-600">
+        <Button
+          size="lg"
+          className="rounded-full bg-yellow-500 text-black hover:bg-yellow-600"
+        >
           <Calendar className="mr-2 h-5 w-5" />
           Reservar Cita
         </Button>

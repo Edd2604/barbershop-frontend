@@ -4,7 +4,7 @@ import {
   MdOutlineInventory2,
   MdOutlinePayment,
   MdOutlineShoppingCart,
-  MdStoreMallDirectory,
+  MdStoreMallDirectory
 } from 'react-icons/md'
 import { FaUsersGear, FaRegBell } from 'react-icons/fa6'
 import { IoShieldHalfSharp } from 'react-icons/io5'
@@ -20,7 +20,7 @@ export const DASHBOARD_LINKS = [
   {
     label: 'Solicitudes',
     href: '/admin/appointments',
-    icon: FaRegBell,
+    icon: FaRegBell
   },
   { label: 'Productos', href: '/admin/products', icon: BsBoxSeam },
   { label: 'Clientes', href: '/admin/customers', icon: FiUsers },
@@ -29,12 +29,12 @@ export const DASHBOARD_LINKS = [
   { label: 'Administradores', href: '/admin/users', icon: IoShieldHalfSharp },
   { label: 'Barberos', href: '/admin/barbers', icon: TbUserStar },
   { label: 'Ventas', href: '/admin/sales', icon: MdOutlinePayment },
-  { label: 'Compras', href: '/admin/purchases', icon: BiPurchaseTag },
+  { label: 'Compras', href: '/admin/purchases', icon: BiPurchaseTag }
 ]
 
 export const BARBERSHOP_LINKS = [
   { label: 'Tienda', href: '/', icon: MdStoreMallDirectory },
   { label: 'Mi Carrito', href: '/cart', icon: MdOutlineShoppingCart },
   { label: 'Compras', href: '/account/purchases', icon: TbMoneybag },
-  { label: 'Cuenta', href: '/account', icon: PiUserCheckLight },
+  { label: 'Cuenta', href: '/account', icon: PiUserCheckLight }
 ]

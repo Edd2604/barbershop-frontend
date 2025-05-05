@@ -10,8 +10,8 @@ import GalleryTabContent from './GalleryTabContent'
 import MotionWrapper from './MotionWrapper'
 
 interface TabCategory {
-  value: string;
-  label: string;
+  value: string
+  label: string
 }
 
 const GallerySection = () => {
@@ -45,7 +45,11 @@ const GallerySection = () => {
           </MotionWrapper>
 
           {tabCategories.map(({ value }) => (
-            <GalleryTabContent key={value} category={value} images={galleryImages} />
+            <GalleryTabContent
+              key={value}
+              category={value}
+              images={galleryImages}
+            />
           ))}
         </Tabs>
       </div>

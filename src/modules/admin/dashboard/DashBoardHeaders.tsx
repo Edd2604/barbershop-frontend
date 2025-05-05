@@ -2,14 +2,14 @@ import { FiDollarSign } from 'react-icons/fi'
 import {
   PiUsersThreeFill,
   PiChartLineUpLight,
-  PiChartLineDownLight,
+  PiChartLineDownLight
 } from 'react-icons/pi'
 
 import {
   Card,
   CardContent,
   CardHeader,
-  CardTitle,
+  CardTitle
 } from '@/modules/shared/components/ui/card'
 
 export function TotalProfit() {

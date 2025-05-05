@@ -6,7 +6,7 @@ import {
   ChartConfig,
   ChartContainer,
   ChartTooltip,
-  ChartTooltipContent,
+  ChartTooltipContent
 } from '@/modules/shared/components/ui/chart'
 
 const chartData = [
@@ -15,13 +15,13 @@ const chartData = [
   { mes: 'Marzo', ventas: Math.floor(Math.random() * 100) },
   { mes: 'Abril', ventas: Math.floor(Math.random() * 100) },
   { mes: 'Mayo', ventas: Math.floor(Math.random() * 100) },
-  { mes: 'Junio', ventas: Math.floor(Math.random() * 100) },
+  { mes: 'Junio', ventas: Math.floor(Math.random() * 100) }
 ]
 
 const chartConfig = {
   label: {
-    color: 'var(--chart-2)',
-  },
+    color: 'var(--chart-2)'
+  }
 } satisfies ChartConfig
 
 export default function HalfYearSalesChart() {
@@ -36,7 +36,7 @@ export default function HalfYearSalesChart() {
           data={chartData}
           layout="vertical"
           margin={{
-            left: -20,
+            left: -20
           }}
         >
           <CartesianGrid horizontal={false} />

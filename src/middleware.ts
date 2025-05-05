@@ -5,7 +5,7 @@ import { type JWT } from 'next-auth/jwt'
 export { default } from 'next-auth/middleware'
 
 export const config = {
-  matcher: ['/admin/:path*', '/employee/:path*', '/profile/:path*'],
+  matcher: ['/admin/:path*', '/employee/:path*', '/profile/:path*']
 }
 
 export async function middleware(req: NextRequest) {

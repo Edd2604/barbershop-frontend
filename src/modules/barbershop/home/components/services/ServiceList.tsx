@@ -7,14 +7,14 @@ const listVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2,
-    },
-  },
+      staggerChildren: 0.2
+    }
+  }
 }
 
 const cardVariants = {
   hidden: { opacity: 0, scale: 0.9 },
-  visible: { opacity: 1, scale: 1 },
+  visible: { opacity: 1, scale: 1 }
 }
 
 export default function ServiceList() {

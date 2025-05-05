@@ -2,7 +2,7 @@
 
 import {
   ThemeProvider as NextThemesProvider,
-  ThemeProviderProps,
+  ThemeProviderProps
 } from 'next-themes'
 
 export function ThemeProvider({ children, ...props }: ThemeProviderProps) {

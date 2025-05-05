@@ -8,13 +8,13 @@ import {
   CardContent,
   CardFooter,
   CardHeader,
-  CardTitle,
+  CardTitle
 } from '@shared/components/ui/card'
 import {
   TotalProfit,
   CustomersRegistered,
   TotalSales,
-  TotalExpenses,
+  TotalExpenses
 } from '@admin/dashboard/DashBoardHeaders'
 
 export default async function AdminPage() {
