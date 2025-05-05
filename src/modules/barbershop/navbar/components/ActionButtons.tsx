@@ -67,7 +67,7 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({
               <Button
                 variant="ghost"
                 size="sm"
-                className="border-2 rounded-full"
+                className="border-2 rounded-full cursor-pointer"
               >
                 <User size={16} className="mr-1" />
                 Iniciar Sesión
@@ -79,7 +79,7 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({
               <Button
                 variant="default"
                 size="sm"
-                className="rounded-full text-[var(--color-primary-foreground)]"
+                className="rounded-full text-[var(--color-primary-foreground)] cursor-pointer"
               >
                 <UserPlus size={16} className="mr-1" />
                 Registrarse

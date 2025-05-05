@@ -27,7 +27,7 @@ const ThemeToggle = () => {
       size="icon"
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
       aria-label="Toggle theme"
-      className="hover: rounded-full"
+      className="hover: rounded-full cursor-pointer"
     >
       <motion.div
         initial={{ scale: 0.8, rotate: 0 }}
