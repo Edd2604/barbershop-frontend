@@ -1,6 +1,7 @@
 'use client'
 import { motion } from 'framer-motion'
 import { fadeIn, staggerContainer } from '@/lib/motion'
+import React from 'react'
 
 interface MotionWrapperProps {
   children: React.ReactNode

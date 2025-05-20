@@ -4,7 +4,6 @@ import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 
 import { DASHBOARD_LINKS } from '@/config/links'
-import { ToogleTheme } from '@/modules/shared/components/toogle-theme'
 import {
   Tooltip,
   TooltipContent,
@@ -51,7 +50,6 @@ export function NavAdmin() {
           })}
         </TooltipProvider>
       </ul>
-      <ToogleTheme align="start" />
     </nav>
   )
 }
